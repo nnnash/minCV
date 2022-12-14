@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "SummerPixel22";
+  src: local("SummerPixel22"),
+  url("./src/assets/SummerPixel22Regular-jE0W7.ttf") format("truetype");
+  font-weight: normal;
+}
+
+body {
+  font-size: 20px;
+  margin: 0;
+  font-family: "SummerPixel22", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #bebebe;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+
