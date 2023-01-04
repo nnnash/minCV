@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["es2020"],
-    "module": "ESNext",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2020", "DOM"],
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "composite": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
-    "esm": true
+    "esm": true,
   }
 }

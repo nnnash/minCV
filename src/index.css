@@ -1,17 +1,20 @@
 @font-face {
-  font-family: "SummerPixel22";
-  src: local("SummerPixel22"),
-  url("./src/assets/SummerPixel22Regular-jE0W7.ttf") format("truetype");
+  font-family: "OrangeKid";
+  src: local("OrangeKid"),
+  url("./src/assets/orange kid.ttf") format("truetype");
   font-weight: normal;
 }
 
 body {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0;
-  font-family: "SummerPixel22", sans-serif;
+  background: #e5e5e5;
+}
+
+body, input, button, textarea {
+  font-family: "OrangeKid", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #bebebe;
 }
 
 code {

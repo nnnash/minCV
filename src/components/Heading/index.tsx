@@ -14,7 +14,7 @@ const Heading = () => (
       Software developer with 8 years of full-time Web and 3 years IBM Lotus Notes development. Passionate about UX/UI,
       having the codebase properly arranged, writing the most reusable code which everyone could easily understand,
       getting into the most difficult tasks finding the best solutions. Specialist diploma in Applied Mathematics
-      (equivalent of a master’s degree), Russian State University for Humanities (RSUH). Moscow, Russia
+      (equivalent of a master`s degree), Russian State University for Humanities (RSUH). Moscow, Russia
     </Description>
   </Container>
 )

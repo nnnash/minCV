@@ -1,5 +1,3 @@
-import {RawTech} from './technologies'
-
 export enum Company {
   '0x' = '0x',
   volvo = 'volvo',
@@ -24,6 +22,6 @@ export interface RawProject {
   subProjects?: Array<RawProject>
 }
 export interface Project extends RawProject {
-  techs?: Array<RawTech>
+  techs?: Array<string>
   subProjects?: Array<Project>
 }

@@ -2,9 +2,11 @@ import {css} from '@linaria/core'
 
 export const theme = css`
   --color-primary: black;
-  --color-secondary: #545454;
+  --color-secondary: #808080;
   --bg-primary: white;
-  --bg-secondary: #bebebe;
+  --bg-secondary: #e5e5e5;
+  --action-bg: green;
+  --action-color: white;
 
   --border-width: 4px;
   --spacing: 8px;

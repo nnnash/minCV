@@ -10,12 +10,14 @@ const logos = import.meta.glob('../../assets/logos/*.png', {eager: true})
 
 const formatDate = (date: string) => format(parse(date, 'yyyy-MM', new Date()), 'MMM yyyy')
 
-const Company = ({history, id, name, startDate, endDate, subProjects, position}: Project) => {
+const Company = ({history, id, name, startDate, endDate, subProjects, position, techs}: Project) => {
   const logoImg = logos[PATH.replace('*', id)] as {default: string}
   return (
     <Container>
-      <Logo img={logoImg.default} />
-      <Name>{name}</Name>
+      <LogoNameWrapper>
+        <Logo img={logoImg.default} />
+        <Name>{name}</Name>
+      </LogoNameWrapper>
       <Position>{position}</Position>
       <Period>
         {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'current time'}
@@ -23,6 +25,12 @@ const Company = ({history, id, name, startDate, endDate, subProjects, position}:
       <History>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{history}</ReactMarkdown>
       </History>
+      {!!techs?.length && (
+        <>
+          <Techs>Technologies used in the projects: </Techs>
+          <Techs>{techs.join(', ')}</Techs>
+        </>
+      )}
       {!!subProjects && <List projects={subProjects} />}
     </Container>
   )
@@ -31,6 +39,10 @@ const Company = ({history, id, name, startDate, endDate, subProjects, position}:
 const Container = styled.li`
   list-style: none;
   position: relative;
+`
+const LogoNameWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `
 const Logo = styled.div<{img: string}>`
   position: absolute;
@@ -44,8 +56,7 @@ const Logo = styled.div<{img: string}>`
   ${borderedComponent}
 `
 const Name = styled.h1`
-  margin-bottom: var(--spacing);
-  padding-top: calc(var(--spacing) * 2);
+  margin: 0;
 `
 const Position = styled.h3`
   margin: 0;
@@ -54,11 +65,15 @@ const Period = styled.h4`
   margin: 0;
   color: var(--color-secondary);
 `
-const History = styled.p`
+const History = styled.div`
   color: var(--color-primary);
   ul {
     list-style-type: square;
+    padding-bottom: var(--spacing);
   }
+`
+const Techs = styled.div`
+  color: var(--color-secondary);
 `
 
 const List = ({projects}: {projects: Array<Project>}) => (

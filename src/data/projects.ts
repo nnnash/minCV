@@ -16,7 +16,7 @@ export const projects: Array<Project> = [
         endDate: '2022-10',
         history:
           'Volvocars.com is a homepage for Volvo, where you can learn, select, configure, and purchase (lease) Volvo car. \n' +
-          'Sergey was a part of a team working on a b2b section allowing companies to run the so-called “fleet” of Volvo cars. To be more specific he worked with the “learn” part of it, where you can compare different offers and find out all the necessary information about “car subscriptions” - https://www.volvocars.com/se/business and https://www.volvocars.com/se/business/fleet. Main responsibilities were: starting the new application within the family of others, adopting patterns and practices used in the company, developing and maintaining new modules of the pages using cms and GraphQL for data.\n',
+          'Sergey was a part of a team working on a b2b section allowing companies to run the so-called “fleet” of Volvo cars. To be more specific he worked with the “learn” part of it, where you can compare different offers and find out all the necessary information about “car subscriptions” - [Business page](https://www.volvocars.com/se/business) and [Fleet page](https://www.volvocars.com/se/business/fleet). Main responsibilities were: starting the new application within the family of others, adopting patterns and practices used in the company, developing and maintaining new modules of the pages using cms and GraphQL for data.\n',
         id: Company.volvo,
       },
       {
