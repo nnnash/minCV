@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "npm run generate-data && tsc && vite build",
     "preview": "vite preview",
-    "generate-data": "ts-node --project tsconfig.scripts.json ./src/scripts/generateData.ts"
+    "generate-data": "ts-node --project tsconfig.scripts.json ./src/scripts/generateData.ts",
+    "start": "npx http-server ./dist"
   },
   "dependencies": {
     "@linaria/babel-preset": "^4.3.0",
