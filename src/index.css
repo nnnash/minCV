@@ -1,7 +1,7 @@
 @font-face {
   font-family: "OrangeKid";
   src: local("OrangeKid"),
-  url("./src/assets/orange kid.ttf") format("truetype");
+  url("./assets/orangekid.ttf") format("truetype");
   font-weight: normal;
 }
 
