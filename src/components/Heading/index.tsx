@@ -3,8 +3,6 @@ import {SectionContainer} from '../shared/Containers'
 import {borderedComponent, desktopMinWidth, tabletMinWidth} from '../../constants/theme'
 import img from './portrait.png'
 
-console.log('img', img)
-
 const Heading = () => (
   <Container as="header">
     <PhotoContainer>

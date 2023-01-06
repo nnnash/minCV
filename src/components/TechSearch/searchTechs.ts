@@ -2,7 +2,7 @@ import techs from '../../data/fullTechData.json'
 import {Tech} from '../../types/technologies'
 import {EnterpriseTech, PetTech, SearchResult} from '../../types/search'
 
-const toKey = (name: string) => name.toLowerCase().replace(/\W/, '')
+const toKey = (name: string) => name.toLowerCase().replace(/\W/g, '')
 
 const techsMap = (techs as Array<Tech>).reduce<Map<string, Tech>>((acc, item) => {
   acc.set(toKey(item.name), item)
