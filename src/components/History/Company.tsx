@@ -39,6 +39,7 @@ const Company = ({history, id, name, startDate, endDate, subProjects, position, 
 const Container = styled.li`
   list-style: none;
   position: relative;
+  margin-top: calc(var(--spacing) * 3);
 `
 const LogoNameWrapper = styled.div`
   display: flex;
@@ -49,7 +50,6 @@ const Logo = styled.div<{img: string}>`
   left: -66px;
   height: 40px;
   width: 40px;
-  background-color: var(--color-primary);
   background-image: ${(props) => `url(${props.img})`};
   background-size: cover;
   image-rendering: pixelated;
