@@ -64,7 +64,7 @@ const Photo = styled.div`
 const Name = styled.h1`
   font-size: 4rem;
   grid-area: name;
-  margin: calc(var(--spacing) * 2) 0 0;
+  margin: 0;
 `
 const Position = styled.h1`
   color: var(--color-secondary);
