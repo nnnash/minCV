@@ -1,10 +1,12 @@
 import {FormEvent, useState} from 'react'
 import {styled} from '@linaria/react'
+import Textarea from 'react-textarea-autosize'
 import {SectionContainer} from '../shared/Containers'
 import {borderedComponent} from '../../constants/theme'
 import {useAppContext} from '../../context'
 import {searchWithList} from './searchTechs'
 import SearchResults from './SearchResults'
+import Cross from '../../assets/cross.png'
 
 const TechSearch = () => {
   const {searchResult, showSearchResults, noMatchResult} = useAppContext()
@@ -14,11 +16,12 @@ const TechSearch = () => {
       <SectionContainer>
         <SearchInput />
       </SectionContainer>
-      {!!noMatchResult ? (
-        <NoMatch>No match (or maybe it`s just a wrong parsing ;)</NoMatch>
-      ) : (
-        !!searchResult && showSearchResults && <SearchResults {...searchResult} />
-      )}
+      {showSearchResults &&
+        (!!noMatchResult ? (
+          <NoMatch>No match (or maybe it`s just a wrong parsing ;)</NoMatch>
+        ) : (
+          !!searchResult && <SearchResults {...searchResult} />
+        ))}
     </>
   )
 }
@@ -43,7 +46,7 @@ const SearchInput = () => {
               clearSearchResult()
             }}
           >
-            ×
+            <img src={Cross} alt="cross" />
           </ClearBtn>
         </ClearBtnWrapper>
       )}
@@ -58,7 +61,7 @@ const Container = styled.form`
   display: flex;
   align-items: start;
 `
-const Input = styled.textarea`
+const Input = styled(Textarea)`
   background: var(--bg-primary);
   width: 100%;
   min-height: calc(var(--spacing) * 3);
@@ -74,14 +77,13 @@ const ClearBtnWrapper = styled.div`
 `
 const ClearBtn = styled.button`
   position: absolute;
-  left: calc(var(--spacing) * -7);
-  top: calc(var(--spacing) * -3);
+  left: calc(var(--spacing) * -8);
+  top: calc(var(--spacing) * 1);
   border: none;
   background: none;
-  font-size: 5rem;
   cursor: pointer;
   :hover {
-    color: var(--color-secondary);
+    opacity: 0.7;
   }
 `
 const Submit = styled.button`
