@@ -82,8 +82,10 @@ const ClearBtn = styled.button`
   border: none;
   background: none;
   cursor: pointer;
+  transform: scale(0.8);
   :hover {
     opacity: 0.7;
+    transform: scale(0.9);
   }
 `
 const Submit = styled.button`
