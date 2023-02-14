@@ -6,7 +6,7 @@ export const projects: Array<Project> = [
     position: 'Consultant Software Developer',
     startDate: '2019-08',
     history:
-      '0+X is a consaltancy broker that works with a leading tech companies in Stockholm such as Spotify, Klarna, Microsoft, and many others',
+      '0+X is a consultancy broker that works with a leading tech companies in Stockholm such as Spotify, Klarna, Microsoft, and many others',
     id: Company['0x'],
     subProjects: [
       {
