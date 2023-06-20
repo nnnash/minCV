@@ -10,6 +10,15 @@ export const projects: Array<Project> = [
     id: Company['0x'],
     subProjects: [
       {
+        name: 'Dice',
+        position: 'Frontend Web Developer',
+        startDate: '2023-03',
+        history:
+          'Dice is a Swedish video game developer, and a part of Electronic Arts. Sergey is a part of a team responsible for a developing of a building tool for the latest Battlefield versions. \n' +
+          'Frontend part of a tool is implemented with React, Typescript, MobX, and Node.js',
+        id: Company.dice,
+      },
+      {
         name: 'Volvo Cars',
         position: 'Frontend Web Developer',
         startDate: '2021-11',
