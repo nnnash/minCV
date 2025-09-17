@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "npm run generate-data && tsc && vite build",
     "preview": "vite preview",
-    "generate-data": "ts-node --project tsconfig.scripts.json ./src/scripts/generateData.ts",
+    "generate-data": "npx tsx --tsconfig tsconfig.scripts.json ./src/scripts/generateData.ts",
     "start": "npx http-server ./dist"
   },
   "dependencies": {
@@ -42,8 +42,8 @@
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "rollup-plugin-css-only": "^4.3.0",
-    "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.1",
+    "tsx": "4.20.5",
     "typescript": "^4.6.4",
     "vite": "4.0.4",
     "vite-plugin-eslint": "^1.8.1"
