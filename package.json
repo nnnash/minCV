@@ -2,6 +2,7 @@
   "name": "mincv",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "vite",
     "build": "npm run generate-data && tsc && vite build",
