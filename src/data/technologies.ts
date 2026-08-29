@@ -4,7 +4,16 @@ import {Company} from '../types/project'
 export const technologies: Array<RawTech> = [
   {
     name: 'React',
-    projects: [Company.itchy, Company.nasdaq, Company.netinsight, Company.tink, Company.volvo, Company.yandex],
+    projects: [
+      Company.itchy,
+      Company.nasdaq,
+      Company.netinsight,
+      Company.tink,
+      Company.volvo,
+      Company.yandex,
+      Company.dice,
+      Company.ttk,
+    ],
   },
   {
     name: 'Next.js',
@@ -12,11 +21,35 @@ export const technologies: Array<RawTech> = [
   },
   {
     name: 'Typescript',
-    projects: [Company.volvo, Company.tink, Company.netinsight, Company.nasdaq, Company.sb],
+    projects: [Company.volvo, Company.tink, Company.netinsight, Company.nasdaq, Company.sb, Company.dice, Company.ttk],
   },
   {
     name: 'GraphQL',
     projects: [Company.volvo],
+  },
+  {
+    name: 'tRPC',
+    projects: [Company.ttk],
+  },
+  {
+    name: 'TanStack Query',
+    projects: [Company.ttk],
+  },
+  {
+    name: 'TanStack Router',
+    projects: [Company.ttk],
+  },
+  {
+    name: 'TanStack Table',
+    projects: [Company.ttk],
+  },
+  {
+    name: 'TanStack Form',
+    projects: [Company.ttk],
+  },
+  {
+    name: 'Claude',
+    projects: [Company.ttk],
   },
   {
     name: 'Jest',
@@ -41,6 +74,10 @@ export const technologies: Array<RawTech> = [
   {
     name: 'Redux-observable',
     projects: [Company.yandex, Company.netinsight, Company.nasdaq],
+  },
+  {
+    name: 'MobX',
+    projects: [Company.dice],
   },
   {
     name: 'React-router',
@@ -80,7 +117,7 @@ export const technologies: Array<RawTech> = [
   },
   {
     name: 'Node.js',
-    projects: [Company.netinsight, Company.yandex, Company.volvo],
+    projects: [Company.netinsight, Company.yandex, Company.volvo, Company.dice],
   },
   {
     name: 'Babel',

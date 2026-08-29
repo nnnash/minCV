@@ -1,30 +1,22 @@
 import {css} from '@linaria/core'
 
 export const theme = css`
-  --color-primary: black;
-  --color-secondary: #808080;
-  --bg-primary: white;
-  --bg-secondary: #e5e5e5;
-  --action-bg: green;
-  --action-color: white;
+  --color-primary: #16202c;
+  --color-secondary: #5c6b7a;
+  --color-accent: #2f5d8f;
+  --color-accent-dark: #234a70;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f6f8;
+  --border-color: #dfe3e8;
+  --action-bg: #2f5d8f;
+  --action-color: #ffffff;
 
-  --border-width: 4px;
   --spacing: 8px;
-  --max-width: 1000px;
+  --max-width: 900px;
+  --radius: 6px;
 
-  --border: var(--border-width) solid black;
+  --border: 1px solid var(--border-color);
 `
 
 export const tabletMinWidth = '@media(min-width: 600px)'
 export const desktopMinWidth = '@media(min-width: 769px)'
-
-export const borderedComponent = {
-  borderStyle: 'solid',
-  borderWidth: '4px',
-  borderColor: 'var(--color-primary)',
-  borderRadius: '20px',
-  borderImageSlice: 4,
-  borderImageWidth: 2,
-  borderImageOutset: 0,
-  borderImageSource: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='%23000' /></svg>")`,
-}

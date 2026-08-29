@@ -20,11 +20,13 @@ const generateFullData = (companies: Array<RawProject>) =>
         }
         return techAcc
       }, [])
-      const fullProject = {
+      const fullProject: Project = {
         ...company,
         techs: companyTechs,
-        subProjects: company.subProjects ? generateFullData(company.subProjects).fullProjectData : undefined,
+        subProjects: undefined,
       }
+      // Sub-projects are walked exactly once: generateFullData mutates the shared
+      // fullTechs accumulator, so calling it twice would double every tech's experience.
       if (company.subProjects) {
         const {fullProjectData, projectMap} = generateFullData(company.subProjects)
         fullProject.subProjects = fullProjectData

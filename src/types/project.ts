@@ -1,5 +1,6 @@
 export enum Company {
   '0x' = '0x',
+  ttk = 'ttk',
   dice = 'dice',
   volvo = 'volvo',
   tink = 'tink',

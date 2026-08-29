@@ -10,9 +10,20 @@ export const projects: Array<Project> = [
     id: Company['0x'],
     subProjects: [
       {
+        name: 'TTK Games',
+        position: 'Frontend Web Developer',
+        startDate: '2025-11',
+        history:
+          'TTK Games is a Stockholm based game studio founded in 2022 by a group of industry veterans behind the Battlefield franchise, among them its long-time creative director and one of the architects of the Frostbite engine. ' +
+          'The studio is building the next generation of online shooters, combining the expertise of senior developers from DICE and EA with the ideas of a new generation of developers. ' +
+          'Sergey works in the Online team, responsible for the game infrastructure.',
+        id: Company.ttk,
+      },
+      {
         name: 'Dice',
         position: 'Frontend Web Developer',
         startDate: '2023-03',
+        endDate: '2025-10',
         history:
           'Dice is a Swedish video game developer, and a part of Electronic Arts. Sergey is a part of a team responsible for a developing of a building tool for the latest Battlefield versions. \n' +
           'Frontend part of a tool is implemented with React, Typescript, MobX, and Node.js',

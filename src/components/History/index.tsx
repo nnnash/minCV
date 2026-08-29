@@ -17,7 +17,7 @@ const History = () => {
 
 const Container = styled(SectionContainer)`
   margin-top: calc(var(--spacing) * 4);
-  margin-left: calc(var(--spacing) * 3);
+  padding-left: calc(var(--spacing) * 3);
 `
 
 export default History

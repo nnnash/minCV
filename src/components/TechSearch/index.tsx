@@ -1,12 +1,10 @@
-import {FormEvent, useState} from 'react'
+import {FormEvent, KeyboardEvent, useState} from 'react'
 import {styled} from '@linaria/react'
 import Textarea from 'react-textarea-autosize'
 import {SectionContainer} from '../shared/Containers'
-import {borderedComponent} from '../../constants/theme'
 import {useAppContext} from '../../context'
 import {searchWithList} from './searchTechs'
 import SearchResults from './SearchResults'
-import Cross from '../../assets/cross.png'
 
 const TechSearch = () => {
   const {searchResult, showSearchResults, noMatchResult} = useAppContext()
@@ -29,81 +27,125 @@ const TechSearch = () => {
 const SearchInput = () => {
   const [val, setVal] = useState('')
   const {setResult, clearSearchResult, showSearchResults} = useAppContext()
+  const runSearch = () => setResult(searchWithList(val))
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
-    const res = searchWithList(val)
-    setResult(res)
+    runSearch()
+  }
+  // The input is a textarea so that a whole list can be pasted, but a plain
+  // Enter should search; Shift+Enter still adds a new line.
+  const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key !== 'Enter' || e.shiftKey) return
+    e.preventDefault()
+    runSearch()
   }
   return (
     <Container onSubmit={onSubmit}>
-      <Input value={val} onChange={({target}) => setVal(target.value)} placeholder="Search tech experience..." />
-      {!!(val || showSearchResults) && (
-        <ClearBtnWrapper>
+      <InputWrapper>
+        <Input
+          value={val}
+          onChange={({target}) => setVal(target.value)}
+          onKeyDown={onKeyDown}
+          placeholder="Search tech experience..."
+        />
+        {!!(val || showSearchResults) && (
           <ClearBtn
             type="button"
+            aria-label="Clear search"
             onClick={() => {
               setVal('')
               clearSearchResult()
             }}
           >
-            <img src={Cross} alt="cross" />
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+              <path
+                d="M2.5 2.5l11 11M13.5 2.5l-11 11"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
           </ClearBtn>
-        </ClearBtnWrapper>
-      )}
-      <Submit type="submit" value="Submit">
-        Search
-      </Submit>
+        )}
+      </InputWrapper>
+      <Submit type="submit">Search</Submit>
     </Container>
   )
 }
 
 const Container = styled.form`
   display: flex;
-  align-items: start;
+  align-items: stretch;
+  gap: calc(var(--spacing) * 1.5);
+`
+const InputWrapper = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
 `
 const Input = styled(Textarea)`
   background: var(--bg-primary);
   width: 100%;
-  min-height: calc(var(--spacing) * 3);
-  height: calc(var(--spacing) * 3);
-  padding: calc(var(--spacing) * 2);
-  padding-right: calc(var(--spacing) * 8);
+  color: var(--color-primary);
+  padding: calc(var(--spacing) * 1.25) calc(var(--spacing) * 5);
+  padding-left: calc(var(--spacing) * 1.5);
   outline: none;
-  font-size: 1.2rem;
-  ${borderedComponent}
-`
-const ClearBtnWrapper = styled.div`
-  position: relative;
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  ::placeholder {
+    color: #9aa5b1;
+  }
+  :focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(47, 93, 143, 0.12);
+  }
 `
 const ClearBtn = styled.button`
   position: absolute;
-  left: calc(var(--spacing) * -8);
+  right: calc(var(--spacing) * 1);
   top: calc(var(--spacing) * 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  width: 26px;
+  padding: 0;
   border: none;
+  border-radius: 50%;
   background: none;
+  color: var(--color-secondary);
   cursor: pointer;
-  transform: scale(0.8);
+  transition: background 0.15s ease, color 0.15s ease;
   :hover {
-    opacity: 0.7;
-    transform: scale(0.9);
+    background: var(--bg-secondary);
+    color: var(--color-primary);
   }
 `
 const Submit = styled.button`
   cursor: pointer;
-  margin-left: calc(var(--spacing) * 2);
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
   background: var(--action-bg);
   color: var(--action-color);
-  padding: var(--spacing);
+  padding: calc(var(--spacing) * 1.25) calc(var(--spacing) * 2.5);
+  border: 1px solid var(--action-bg);
+  border-radius: var(--radius);
+  transition: background 0.15s ease, border-color 0.15s ease;
   :hover {
-    background: var(--action-color);
-    color: var(--action-bg);
+    background: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
   }
-  ${borderedComponent}
 `
 const NoMatch = styled.h3`
-  margin: var(--spacing);
+  margin: 0 calc(var(--spacing) * 2);
+  font-weight: 500;
+  color: var(--color-secondary);
 `
 
 export default TechSearch
